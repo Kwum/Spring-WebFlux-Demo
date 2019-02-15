@@ -23,6 +23,7 @@ public class RouterConfig {
 
     @Bean
     public RouterFunction<ServerResponse> helloRouter(){
-        return route(GET("/time"), helloHandler::getTime);
+        return route(GET("/time"), helloHandler::getTime)
+                .andRoute(GET("/timePerSec"), helloHandler::getTimePerSec);
     }
 }
